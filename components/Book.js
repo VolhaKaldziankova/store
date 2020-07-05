@@ -12,34 +12,46 @@ class Book extends React.PureComponent {
     publ: PropTypes.string.isRequired,
     price: PropTypes.string.isRequired,
     avail: PropTypes.string.isRequired,
+    viewPage: PropTypes.number.isRequired,
   };
 
   render() {      
-      
+   
+    if (this.props.viewPage==1){
 
     return (
-      /*<tr className="Book">
+
+  
+        <tr className="Book">
         <td>{this.props.title}</td>
         <td>{this.props.writer}</td>
         <td>{this.props.publ}</td>
         <td>{this.props.price}</td>
         <td>{this.props.avail}</td>
-      </tr>
-      */
-        <div className="Book">
-        {this.props.title}
-        {this.props.writer}
-        {this.props.publ}
-        {this.props.price}
-        {this.props.avail}
-      </div>
-      
-    )
+        </tr>
 
-    ;
+    );
+    }
 
+    if (this.props.viewPage==2){
+
+      return (
+        <div className="BookDiv">
+        <div className="BookName">{this.props.title} </div><br/>
+        {this.props.writer}<br/>
+        {this.props.publ}<br/>
+        {this.props.price}<br/>
+        {this.props.avail}    
+        </div>
+              
+        
+ 
+
+    );
+
+    
   }
-
+}
 }
 
 export default Book;
